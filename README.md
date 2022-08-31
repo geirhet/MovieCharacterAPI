@@ -7,7 +7,7 @@ Assignment for using EF Core and create a Web API.
 
 -   [Install](#install)
 -   [Usage](#usage)
--   [Database diagram](# Database diagram)
+-   [Database diagram](# database diagram)
 -   [Maintainers](#maintainers)
 
 
@@ -28,7 +28,7 @@ Run in Visual Studio
 
 ## Database diagram
 
-[Database diagram](MovieCharacterAPI/MovieCharacterAPI/DB Diagram.png "Database diagram")
+![Database diagram](MovieCharacterAPI/MovieCharacterAPI/DB Diagram.png "Database diagram")
 
 ## Maintainers
 
