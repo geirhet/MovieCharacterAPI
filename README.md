@@ -28,7 +28,7 @@ Run in Visual Studio
 
 ## Database diagram
 
-![Database diagram](./DB_Diagram.png "Database diagram")
+![Database diagram](MovieCharacterAPI/MovieCharacterAPI/DB_Diagram.png "Database diagram")
 
 ## Maintainers
 
