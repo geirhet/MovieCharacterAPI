@@ -7,7 +7,7 @@ Assignment for using EF Core and create a Web API.
 
 -   [Install](#install)
 -   [Usage](#usage)
--   [Database diagram](#database diagram)
+-   [Database diagram](#database_diagram)
 -   [Maintainers](#maintainers)
 
 
