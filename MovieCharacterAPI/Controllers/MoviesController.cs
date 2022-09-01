@@ -30,9 +30,6 @@ namespace MovieCharacterAPI.Controllers
 		/// Returns a list of all movies
 		/// </summary>
 		/// <returns>A list of MovieReadDTO</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<MovieReadDTO>>> GetMovies()
 		{
