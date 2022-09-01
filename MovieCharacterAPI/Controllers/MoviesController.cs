@@ -44,9 +44,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>MovieReadDTO or Not Found if Movie is null</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet("{id}")]
 		public async Task<ActionResult<MovieReadDTO>> GetMovie(int id)
 		{
@@ -65,9 +62,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>Not Found if movieId does not exist in DB, A list of CharacterReadDTO</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet("{id}/characters")]
 		public async Task<ActionResult<IEnumerable<CharacterReadDTO>>> GetCharactersInMovie(int id)
 		{
@@ -87,9 +81,6 @@ namespace MovieCharacterAPI.Controllers
 		/// <param name="id"></param>
 		/// <param name="dtoMovie"></param>
 		/// <returns>No Content, Bad Request if movieId and Id does not match or Not Found if movieId does not exist in DB</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpPut("{id}")]
 		public async Task<IActionResult> PutMovie(int id, MovieEditDTO dtoMovie)
 		{
@@ -115,9 +106,6 @@ namespace MovieCharacterAPI.Controllers
 		/// <param name="id"></param>
 		/// <param name="characters"></param>
 		/// <returns>Not Found if movie does not exist i DB, Bad Request or No Content</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpPut("{id}/characters")]
 		public async Task<IActionResult> UpdateMovieCharacters(int id, List<int> characters)
 		{
@@ -144,9 +132,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="dtoMovie"></param>
 		/// <returns>The created movie</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpPost]
 		public async Task<ActionResult<Movie>> PostMovie(MovieCreateDTO dtoMovie)
 		{
@@ -166,9 +151,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>No Content or Not Found if movieId does not exist in DB</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteMovie(int id)
 		{

@@ -30,9 +30,6 @@ namespace MovieCharacterAPI.Controllers
 		/// Returns a list of all characters
 		/// </summary>
 		/// <returns>A list of characterReadDTOs</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<CharacterReadDTO>>> GetCharacters()
 		{
@@ -44,9 +41,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>CharacterReadDTO or Not Found if Characte is null</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet("{id}")]
 		public async Task<ActionResult<CharacterReadDTO>> GetCharacter(int id)
 		{
@@ -66,9 +60,6 @@ namespace MovieCharacterAPI.Controllers
 		/// <param name="id"></param>
 		/// <param name="dtoCharacter"></param>
 		/// <returns>No Content, Bad Request if characterId and Id does not match or Not Found if characterId does not exist in DB</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpPut("{id}")]
 		public async Task<IActionResult> PutCharacter(int id, CharacterEditDTO dtoCharacter)
 		{
@@ -94,9 +85,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="dtoCharacter"></param>
 		/// <returns>The created character</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpPost]
 		public async Task<ActionResult<Character>> PostCharacter(CharacterCreateDTO dtoCharacter)
 		{
@@ -112,9 +100,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>No Content or Not Found if characterId does not exist in DB</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteCharacter(int id)
 		{

@@ -32,9 +32,6 @@ namespace MovieCharacterAPI.Controllers
 		/// Returns a list of all franchies
 		/// </summary>
 		/// <returns>A list of franchiseReadDTO</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<FranchiseReadDTO>>> GetFranchises()
 		{
@@ -47,9 +44,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>FranchiseReadDTO or Not Found if Franchise is null</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet("{id}")]
 		public async Task<ActionResult<FranchiseReadDTO>> GetFranchise(int id)
 		{
@@ -68,9 +62,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>Not Found if franchiseId does not exist in DB, A list of MovieReadDTOs</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet("{id}/movies")]
 		public async Task<ActionResult<IEnumerable<MovieReadDTO>>> GetMoviesInFranchise(int id)
 		{
@@ -89,9 +80,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>Not Found if franchiseId does not exist in DB, A list of CharacterReadDTOs</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpGet("{id}/characters")]
 		public async Task<ActionResult<IEnumerable<CharacterReadDTO>>> GetCharactersInFranchise(int id)
 		{
@@ -110,9 +98,7 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="dtoFranchise"></param>
 		/// <returns>The created franchise</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+
 		[HttpPost]
 		public async Task<ActionResult<Franchise>> PostFranchise(FranchiseCreateDTO dtoFranchise)
 		{
@@ -130,9 +116,7 @@ namespace MovieCharacterAPI.Controllers
 		/// <param name="id"></param>
 		/// <param name="dtoFranchise"></param>
 		/// <returns>No Content, Bad Request if franchiseId and Id does not match or Not Found if franchiseId does not exist in DB</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+
 		[HttpPut("{id}")]
 		public async Task<IActionResult> PutFranchise(int id, FranchiseEditDTO dtoFranchise)
 		{
@@ -158,9 +142,6 @@ namespace MovieCharacterAPI.Controllers
 		/// <param name="id"></param>
 		/// <param name="movies"></param>
 		/// <returns>Not Found if Franchise does not exist i DB, Bad Request or No Content</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpPut("{id}/movies")]
 		public async Task<IActionResult> UpdateFranchiseMovies(int id, List<int> movies)
 		{
@@ -186,9 +167,6 @@ namespace MovieCharacterAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns>No Content or Not Found if franchiseId does not exist in DB</returns>
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteFranchise(int id)
 		{
